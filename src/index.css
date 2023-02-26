@@ -1,4 +1,12 @@
 body{
     background-color: #2B3467;
-    color: #FCFFE7
+    color: #FCFFE7;
+}
+
+
+
+@media (max-width: 768px) {
+    .right{
+        font-size: 14px;
+    }
 }

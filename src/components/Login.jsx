@@ -61,6 +61,12 @@ function Login({user,setUser}) {
       <button type="submit" className="btn btn-success mt-2">
         {loading ? "Loading...": "LOG IN"}
       </button>
+      <button type="button" className="btn btn-secondary mt-2" onClick = {()=>{
+        setEmail("guest@gmail.com");
+        setPassword("Guest@123#123");
+      }}>
+        Guest Login
+      </button>
     </form>
   );
 }

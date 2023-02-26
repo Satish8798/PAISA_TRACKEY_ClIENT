@@ -10,22 +10,22 @@ function Transaction({ transaction, handleDelete }) {
 
   return (
     <div className="transaction text-dark d-flex flex-row justify-content-between w-100 mb-2 p-2 bg-light align-items-center">
-      <div className="left">
+      <div className="left text-start w-50">
         <h4>{transaction.name}</h4>
         <p>{transaction.description}</p>
       </div>
       <div
-        className="right d-flex flex-row justify-content-center align-items-center"
+        className="right w-50 d-flex flex-row justify-content-around align-items-center"
         style={{ color: transaction.isCredit ? "darkgreen" : "red" }}
       >
         <div>
-          <h5>
+          <p>
             <span>{transaction.isCredit ? <AddIcon /> : <RemoveIcon />}</span>
             <span>
-              <CurrencyRupeeIcon />
+              <CurrencyRupeeIcon sx={{fontSize:"20px"}}/>
             </span>
             {transaction.amount}
-          </h5>
+          </p>
           <p>{date}</p>
         </div>
        <div className="p-1">

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {  useLayoutEffect, useState } from "react";
 import { Routes,Route, useNavigate } from "react-router-dom";
 import Add from "./pages/Add";
 import Profile from "./pages/Profile";
@@ -13,7 +13,7 @@ function App() {
   const [transactions, setTransactions] = useState([]);
   const navigateTo = useNavigate();
 
-  useEffect(()=>{
+  useLayoutEffect(()=>{
     let userData = localStorage.getItem('user');
     if(userData){
       setUser(JSON.parse(userData));
