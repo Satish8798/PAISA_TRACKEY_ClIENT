@@ -20,7 +20,7 @@ function Register({user,setUser}) {
   return (
     <div className="container text-center" style={{ height: "100vh" }}>
       <div className="row d-flex justify-content-center flex-column align-items-center h-100">
-        <div className="col-12 col-md-8 col-lg-6">
+        <div className="col-12 col-md-12 col-lg-6">
           <h1>PAISA TRACKEY</h1>
           <Tabs
             value={value}

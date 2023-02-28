@@ -6,6 +6,9 @@ import Register from "./pages/Register";
 import Transactions from "./pages/Transactions";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Donation from "./pages/Donation";
+import PaymentSuccess from "./pages/PaymentSuccess";
+import PaymentFailure from "./pages/paymentFailure";
 
 function App() {
 
@@ -29,6 +32,9 @@ function App() {
         <Route path='/add' element={<Add user={user} transactions={transactions} setTransactions={setTransactions} setUser={setUser}/>}/>
         <Route path='/register' element={<Register user={user} setUser={setUser}/>} />
         <Route path='/profile' element={<Profile user={user} setUser={setUser}/>} />
+        <Route path='/donation' element={<Donation user={user} setUser={setUser} transactions={transactions} setTransactions={setTransactions}/>}/>
+        <Route path='/donation/success' element={<PaymentSuccess user={user} setUser={setUser} transactions={transactions} setTransactions={setTransactions}/>}/>
+        <Route path='/donation/failure' element={<PaymentFailure user={user} setUser={setUser} transactions={transactions} setTransactions={setTransactions}/>}/>
       </Routes>
     </div>
   );

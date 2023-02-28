@@ -7,6 +7,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import CloseIcon from "@mui/icons-material/Close";
 import { toast } from "react-toastify";
 import axios from "axios";
+import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 
 function Profile({ user, setUser }) {
   const navigateTo = useNavigate();
@@ -38,13 +39,19 @@ function Profile({ user, setUser }) {
 
   return (
     <div className="profile container mt-5">
+      <div className="header d-flex flex-row justify-content-between align-items-center">
+      <h1 style={{color:"#2B3467"}}>PAISA TRACKEY</h1>
+      <button onClick={()=>{
+        navigateTo('/donation');
+      }} className="btn btn-success">Donate us <VolunteerActivismIcon/></button>
+      </div>
       <ArrowBackIcon
         sx={{ fontSize: "50px", cursor: "pointer" }}
         onClick={() => navigateTo(-1)}
       />
       {!edit ? (
         <div className="profile-edit d-flex flex-row justify-content-between">
-          <div className="profile">
+          <div className="profile mt-5">
             <h1>{user.name}</h1>
             <h2>{user.email}</h2>
             <h3>
@@ -58,7 +65,7 @@ function Profile({ user, setUser }) {
           />
         </div>
       ) : (
-        <div className="profile-edit d-flex flex-row justify-content-between">
+        <div className="mt-5 profile-edit d-flex flex-row justify-content-between">
           <div className="updateform">
             <div className="form-floating mb-3 text-dark">
               <input
