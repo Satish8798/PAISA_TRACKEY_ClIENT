@@ -13,7 +13,7 @@ function Transaction({ transaction, handleDelete }) {
       style={{ backgroundColor: "#ffffff5a", borderRadius:"10px", boxShadow:"5px 0 2px 2px #ffffff5a, -5px 0 2px 2px #ffffff5a" }}
     >
       <div className="left text-start w-50">
-        <h4>{transaction.name}</h4>
+        <h4 style={{fontWeight:"700"}}>{transaction.name}</h4>
         <p>{transaction.description}</p>
       </div>
       <div
@@ -21,14 +21,14 @@ function Transaction({ transaction, handleDelete }) {
         style={{ color: transaction.isCredit ? "darkgreen" : "red" }}
       >
         <div>
-          <p>
+          <p style={{fontWeight:"700"}}>
             <span>{transaction.isCredit ? <AddIcon /> : <RemoveIcon />}</span>
             <span>
               <CurrencyRupeeIcon sx={{ fontSize: "20px" }} />
             </span>
             {transaction.amount}
           </p>
-          <p>{date}</p>
+          <p style={{fontWeight:"500"}}>{date}</p>
         </div>
         <div className="p-1">
           <DeleteIcon

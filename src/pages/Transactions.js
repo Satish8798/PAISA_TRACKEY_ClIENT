@@ -55,7 +55,7 @@ function Transactions({ user, transactions, setTransactions, setUser }) {
             <h3>Transactions</h3>
             {user && (
               <p>
-                Bal: <CurrencyRupeeIcon />
+                Bal: <CurrencyRupeeIcon style={{fontSize:"15px"}}/>
                 {user.balance.toFixed(2)}
               </p>
             )}

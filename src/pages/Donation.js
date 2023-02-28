@@ -10,7 +10,7 @@ function Donation() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        fetch('http://localhost:8001/donation/create-checkout-session',{
+        fetch('https://paisa-trackey.onrender.com/donation/create-checkout-session',{
           method: 'POST',
           headers:{
             'Content-Type':'application/json'
