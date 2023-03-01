@@ -14,7 +14,11 @@ function Transactions({ user, transactions, setTransactions, setUser }) {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        "https://paisa-trackey.onrender.com/transaction/get/all/" + user._id
+        "https://paisa-trackey.onrender.com/transaction/get/all/" + user._id,{
+          headers:{
+            "access-token": user.token
+          }
+        }
       );
       setTransactions([...data].reverse());
       setLoading(false);
@@ -27,9 +31,13 @@ function Transactions({ user, transactions, setTransactions, setUser }) {
   const handleDelete = async (id) => {
     try {
       const { data } = await axios.delete(
-        "https://paisa-trackey.onrender.com/transaction/delete/" + id
+        "https://paisa-trackey.onrender.com/transaction/delete/" + id,{
+          headers:{
+            "access-token": user.token
+          }
+        }
       );
-      setUser(data);
+      setUser({...user,balance: data.balance});
       setToggle(!toggle);
     } catch (error) {
       console.log(error);

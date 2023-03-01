@@ -26,10 +26,15 @@ function Profile({ user, setUser }) {
         try {
           const {data} = await axios.put("https://paisa-trackey.onrender.com/user/update",{
             name,email,id: user._id
+          },{
+            headers:{
+              "access-token":user.token
+            }
           });
-          setUser(data);
+          setUser({...data,_id: user._id,balance: user.balance, token: user.token});
           setName(data.name);
           setEmail(data.email);
+          toast("profile updated")
           setEdit(false);
         } catch (error) {
           setEdit(false);

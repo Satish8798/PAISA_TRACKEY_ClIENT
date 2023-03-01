@@ -26,11 +26,15 @@ function Add({user,setUser,transactions,setTransactions}) {
           description,
           isCredit,
           user: user._id
+        },{
+          headers:{
+            "access-token": user.token
+          }
         });
 
         if(data){
           setLoading(false);
-          setUser(data.user);
+          setUser({...user,balance: data.user.balance });
           setAmount(0);
           setName('');
           setDescription('');

@@ -58,7 +58,7 @@ function Login({user,setUser}) {
         />
         <label>Password</label>
       </div>
-      <button type="submit" className="btn btn-success mt-2">
+      <button disabled={loading} type="submit" className="btn btn-success mt-2">
         {loading ? "Loading...": "LOG IN"}
       </button>
       <button type="button" className="btn btn-secondary mt-2" onClick = {()=>{
